@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sharma & Co. – Chartered Accountants, Delhi</title>
+  <meta name="description" content="Sharma & Co.: Expert GST, Tax Filing & Audit services in Delhi. Book a free 15 min call today."/>
+  <!-- Tailwind CSS CDN with custom theme -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif']
+          },
+          colors: {
+            primary: '#0B2545', // deep navy
+            accent: '#F49D1A',  // bright saffron
+            waveStart: '#0B2545',
+            waveEnd: '#F49D1A',
+            background: '#F1F5F9'
+          },
+          animation: {
+            float: 'float 3s ease-in-out infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-background text-gray-800 font-inter leading-relaxed">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full z-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-center py-4">
+        <a href="#" class="flex items-center text-primary font-heading text-2xl">
+          <img src="https://placehold.co/40" alt="Logo" class="h-10 w-10 mr-2" />
+          Sharma & Co.
+        </a>
+        <div class="hidden md:flex space-x-6">
+          <a href="#services" class="text-gray-700 hover:text-accent transition">Services</a>
+          <a href="#process" class="text-gray-700 hover:text-accent transition">Our Process</a>
+          <a href="#about" class="text-gray-700 hover:text-accent transition">About</a>
+          <a href="#insights" class="text-gray-700 hover:text-accent transition">Insights</a>
+          <a href="#contact" class="text-gray-700 hover:text-accent transition">Contact</a>
+        </div>
+        <div class="hidden md:flex">
+          <a href="https://wa.me/911112345678" class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-yellow-500 transition">WhatsApp Us</a>
+        </div>
+        <button class="md:hidden mobile-menu-button focus:outline-none">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu hidden md:hidden bg-white">
+      <a href="#services" class="block px-6 py-3 hover:bg-background">Services</a>
+      <a href="#process" class="block px-6 py-3 hover:bg-background">Our Process</a>
+      <a href="#about" class="block px-6 py-3 hover:bg-background">About</a>
+      <a href="#insights" class="block px-6 py-3 hover:bg-background">Insights</a>
+      <a href="#contact" class="block px-6 py-3 hover:bg-background">Contact</a>
+    </div>
+  </nav>
+
+  <!-- SVG Wave Header -->
+  <header class="relative pt-24 bg-gradient-to-r from-primary to-accent text-white overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 py-24 text-center relative z-10">
+      <h1 class="text-5xl md:text-6xl font-heading font-extrabold mb-4 drop-shadow-lg">
+        Elevate Your Business<br/>with Expert CA Services
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 drop-shadow">
+        Fast, reliable, and compliant accounting solutions tailored for Delhi professionals.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a href="https://wa.me/911112345678?text=Hello%20Sharma%20%26%20Co.%20I%20need%20CA%20services" class="px-8 py-4 bg-white text-primary font-semibold rounded-full shadow-lg hover:shadow-xl transition">
+          Book Free 15 min Call
+        </a>
+        <button id="showUpi" class="px-8 py-4 border-2 border-white rounded-full hover:bg-white hover:text-primary transition">
+          Pay ₹500 Token Fee
+        </button>
+      </div>
+    </div>
+    <!-- Animated Icons -->
+    <img src="https://placehold.co/64" alt="Icon" class="absolute top-10 left-10 w-16 animate-float opacity-70" />
+    <img src="https://placehold.co/80" alt="Icon" class="absolute bottom-10 right-10 w-20 animate-float opacity-70" />
+    <!-- Wave -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+      <svg viewBox="0 0 1440 320" class="w-full h-32">
+        <path fill="url(#wave-gradient)" d="M0,224L48,197.3C96,171,192,117,288,112C384,107,480,149,576,170.7C672,192,768,192,864,181.3C960,171,1056,149,1152,160C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        <defs>
+          <linearGradient id="wave-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0">
+            <stop offset="0%" stop-color="#0B2545"/>
+            <stop offset="100%" stop-color="#F49D1A"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Core Services -->
+  <section id="services" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-primary mb-12">Our Core Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div class="p-8 bg-white rounded-3xl shadow-2xl transform hover:-translate-y-2 transition">
+          <img src="https://placehold.co/48" alt="GST" class="w-12 mb-4 mx-auto" />
+          <h3 class="text-2xl font-semibold mb-2">GST Registration & Filing</h3>
+          <p class="text-gray-600">Seamless compliance to keep your business penalty-free and up-to-date.</p>
+        </div>
+        <div class="p-8 bg-white rounded-3xl shadow-2xl transform hover:-translate-y-2 transition">
+          <img src="https://placehold.co/48" alt="Tax" class="w-12 mb-4 mx-auto" />
+          <h3 class="text-2xl font-semibold mb-2">Income‑Tax Returns</h3>
+          <p class="text-gray-600">Maximize refunds and minimize liabilities with expert planning.</p>
+        </div>
+        <div class="p-8 bg-white rounded-3xl shadow-2xl transform hover:-translate-y-2 transition">
+          <img src="https://placehold.co/48" alt="Audit" class="w-12 mb-4 mx-auto" />
+          <h3 class="text-2xl font-semibold mb-2">Audit & Assurance</h3>
+          <p class="text-gray-600">Comprehensive audits that ensure compliance and build trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section id="process" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-primary mb-12">Our Process</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 border rounded-2xl shadow-md hover:shadow-xl transition">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-xl font-bold">1</span>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Consultation</h3>
+          <p class="text-gray-600">Understanding your business needs with a free, no-obligation consultation.</p>
+        </div>
+        <div class="p-8 border rounded-2xl shadow-md hover:shadow-xl transition">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-xl font-bold">2</span>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Strategy</h3>
+          <p class="text-gray-600">Tailoring a compliance & tax strategy that perfectly fits your business.</p>
+        </div>
+        <div class="p-8 border rounded-2xl shadow-md hover:shadow-xl transition">
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-white text-xl font-bold">3</span>
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Execution</h3>
+          <p class="text-gray-600">Implementing expert solutions swiftly, ensuring you stay ahead of deadlines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel -->
+  <section id="testimonials" class="bg-background py-20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-primary mb-8">What Our Clients Say</h2>
+      <div class="space-y-6">
+        <div class="p-8 bg-gradient-to-r from-primary to-accent text-white rounded-3xl shadow-xl">
+          <p class="italic mb-4">“Sharma & Co. transformed our tax process—fast, efficient, and transparent service!”</p>
+          <p class="font-semibold">— Mr. Anil Gupta, CEO, TechStartup</p>
+        </div>
+        <div class="p-8 bg-gradient-to-r from-accent to-primary text-white rounded-3xl shadow-xl">
+          <p class="italic mb-4">“Their professional approach and deep expertise in audit management is truly unmatched.”</p>
+          <p class="font-semibold">— Ms. Priya Malhotra, Founder, RetailCo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Team -->
+  <section id="about" class="py-20 bg-background">
+    <div class="max-w-6xl mx-auto px-6 space-y-20">
+      <div class="flex flex-col lg:flex-row items-center lg:space-x-12">
+        <img src="https://placehold.co/256" alt="CA Ritu Sharma" class="w-64 h-64 rounded-full shadow-lg mb-6 lg:mb-0" />
+        <div>
+          <h2 class="text-4xl font-bold text-primary mb-4">Meet CA Ritu Sharma</h2>
+          <p class="text-gray-600 mb-4">
+            With over 15 years of tax and audit expertise, CA Ritu Sharma leads our firm with unparalleled dedication and technical insight. Her guidance has helped hundreds of clients achieve financial compliance and operational excellence.
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2">
+            <li>ICAI Member No. AXXXXX</li>
+            <li>ISO 9001:2015 Certified Processes</li>
+            <li>Supported 200+ clients across diverse sectors</li>
+            <li>Dedicated to personalized and expert financial planning</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Additional Team Members -->
+      <div>
+        <h3 class="text-3xl font-semibold text-primary text-center mb-8">Our Expert Team</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-3xl shadow-xl p-6">
+            <img src="https://placehold.co/150" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4" />
+            <h4 class="text-xl font-bold text-primary text-center">Rahul Verma</h4>
+            <p class="text-center text-gray-600">Senior Auditor</p>
+          </div>
+          <div class="bg-white rounded-3xl shadow-xl p-6">
+            <img src="https://placehold.co/150" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4" />
+            <h4 class="text-xl font-bold text-primary text-center">Sneha Kapoor</h4>
+            <p class="text-center text-gray-600">Tax Consultant</p>
+          </div>
+          <div class="bg-white rounded-3xl shadow-xl p-6">
+            <img src="https://placehold.co/150" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4" />
+            <h4 class="text-xl font-bold text-primary text-center">Vikram Singh</h4>
+            <p class="text-center text-gray-600">Compliance Advisor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Insights / Blog -->
+  <section id="insights" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-primary mb-12">Latest Insights</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+          <img src="https://placehold.co/400x250" alt="Blog Post" class="w-full" />
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">Understanding GST Updates</h3>
+            <p class="text-gray-600 mb-4">Stay updated with the latest GST amendments and what they mean for your business.</p>
+            <a href="#" class="text-accent font-semibold hover:underline">Read More</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+          <img src="https://placehold.co/400x250" alt="Blog Post" class="w-full" />
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">Tax Planning Strategies</h3>
+            <p class="text-gray-600 mb-4">Expert tips on how to maximize your deductions and streamline your financial process.</p>
+            <a href="#" class="text-accent font-semibold hover:underline">Read More</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+          <img src="https://placehold.co/400x250" alt="Blog Post" class="w-full" />
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">Audit Best Practices</h3>
+            <p class="text-gray-600 mb-4">Learn how a proper audit can improve your business transparency and trustworthiness.</p>
+            <a href="#" class="text-accent font-semibold hover:underline">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact with Pattern BG -->
+  <section id="contact" class="py-20 relative">
+    <div class="absolute inset-0 opacity-10 bg-[url('https://placehold.co/200x200')] bg-repeat"></div>
+    <div class="relative max-w-2xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-primary mb-8">Get in Touch</h2>
+      <form id="contactForm" action="https://formsubmit.co/your-email@example.com" method="POST" class="space-y-6 bg-white p-10 rounded-3xl shadow-2xl">
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="text" name="name" placeholder="Your Name" required class="w-full px-6 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"/>
+        <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-6 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"/>
+        <select name="service" required class="w-full px-6 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+          <option value="">Select Service</option>
+          <option>GST Filing</option>
+          <option>Tax Return</option>
+          <option>Audit</option>
+        </select>
+        <textarea name="message" placeholder="How can we help you?" class="w-full px-6 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent" rows="4"></textarea>
+        <button type="submit" class="w-full py-4 bg-accent text-white font-semibold rounded-full hover:bg-yellow-500 transition">
+          Submit
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <div class="flex flex-col md:flex-row items-center space-x-6">
+        <a href="#" class="text-sm hover:underline">Privacy Policy</a>
+        <a href="#" class="text-sm hover:underline">Terms of Service</a>
+        <a href="#" class="text-sm hover:underline">Sitemap</a>
+      </div>
+      <p class="text-sm">&copy; Sharma & Co. 20XX. All rights reserved.</p>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 mt-6 border-t border-gray-700 pt-4 text-center">
+      <p class="text-xs">Designed & Developed by Md Rahib Hasan.</p>
+    </div>
+  </footer>
+
+  <!-- Inline JS -->
+  <script>
+    // Mobile Menu Toggle
+    document.querySelector('.mobile-menu-button').addEventListener('click', () => {
+      document.querySelector('.mobile-menu').classList.toggle('hidden');
+    });
+    // UPI Payment Section Toggle (if implemented on your page)
+    document.getElementById('showUpi').addEventListener('click', () => {
+      const upiSection = document.getElementById('upiSection');
+      if(upiSection) {
+        upiSection.classList.toggle('hidden');
+      }
+    });
+    // Basic Client Side Form Validation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      if(!this.name.value.trim() || !this.phone.value.trim()){
+        e.preventDefault();
+        alert('Please fill in all required fields.');
+      }
+    });
+  </script>
+</body>
+</html>
