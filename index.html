@@ -5,47 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sharma & Co. – Chartered Accountants, Delhi</title>
   <meta name="description" content="Sharma & Co.: Expert GST, Tax Filing & Audit services in Delhi. Book a free 15 min call today."/>
-  <!-- Tailwind CSS CDN with custom theme -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            inter: ['Inter', 'sans-serif'],
-            heading: ['Poppins', 'sans-serif']
-          },
-          colors: {
-            primary: '#0B2545', // deep navy
-            accent: '#F49D1A',  // bright saffron
-            waveStart: '#0B2545',
-            waveEnd: '#F49D1A',
-            background: '#F1F5F9'
-          },
-          animation: {
-            float: 'float 3s ease-in-out infinite'
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-10px)' }
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <!-- Google Fonts -->
+  <link rel="stylesheet" type="text/css" href="src/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-background text-gray-800 font-inter leading-relaxed">
+<body class="bg-textured text-gray-800 font-inter leading-relaxed">
 
   <!-- Navigation -->
   <nav class="bg-white shadow-lg fixed w-full z-20">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex justify-between items-center py-4">
         <a href="#" class="flex items-center text-primary font-heading text-2xl">
-          <img src="https://placehold.co/40" alt="Logo" class="h-10 w-10 mr-2" />
+          <img src="logo.avif" alt="Logo" class="h-10 w-10 mr-2 rounded-full" />
           Sharma & Co.
         </a>
         <div class="hidden md:flex space-x-6">
@@ -74,8 +44,8 @@
     </div>
   </nav>
 
-  <!-- SVG Wave Header -->
-  <header class="relative pt-24 bg-gradient-to-r from-primary to-accent text-white overflow-hidden">
+  <!-- SVG Wave Header with Gradient Overlay -->
+  <header class="relative pt-24 bg-[url('/layered_waves_haikei.avif')] text-white bg-center bg-no-repeat bg-size-[1920px_100%]">
     <div class="max-w-5xl mx-auto px-6 py-24 text-center relative z-10">
       <h1 class="text-5xl md:text-6xl font-heading font-extrabold mb-4 drop-shadow-lg">
         Elevate Your Business<br/>with Expert CA Services
@@ -93,39 +63,27 @@
       </div>
     </div>
     <!-- Animated Icons -->
-    <img src="https://placehold.co/64" alt="Icon" class="absolute top-10 left-10 w-16 animate-float opacity-70" />
-    <img src="https://placehold.co/80" alt="Icon" class="absolute bottom-10 right-10 w-20 animate-float opacity-70" />
-    <!-- Wave -->
-    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
-      <svg viewBox="0 0 1440 320" class="w-full h-32">
-        <path fill="url(#wave-gradient)" d="M0,224L48,197.3C96,171,192,117,288,112C384,107,480,149,576,170.7C672,192,768,192,864,181.3C960,171,1056,149,1152,160C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        <defs>
-          <linearGradient id="wave-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1440" y2="0">
-            <stop offset="0%" stop-color="#0B2545"/>
-            <stop offset="100%" stop-color="#F49D1A"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
+    <img src="abstract_finance_icon.avif" alt="Icon" class="absolute top-15 left-10 w-16 animate-float opacity-70" />
+    <img src="modern_accounting_icon.avif" alt="Icon" class="absolute bottom-10 right-10 w-20 animate-float opacity-70" />
   </header>
 
   <!-- Core Services -->
-  <section id="services" class="py-20">
+  <section id="services" class="py-20 text-center">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center text-primary mb-12">Our Core Services</h2>
+      <h2 class="text-4xl font-bold text-primary mb-12">Our Core Services</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
         <div class="p-8 bg-white rounded-3xl shadow-2xl transform hover:-translate-y-2 transition">
-          <img src="https://placehold.co/48" alt="GST" class="w-12 mb-4 mx-auto" />
-          <h3 class="text-2xl font-semibold mb-2">GST Registration & Filing</h3>
+          <img src="gst_invoice_document.avif" alt="GST" class="w-12 mb-4 mx-auto" />
+          <h3 class="text-2xl font-semibold mb-2">GST <br> Registration & Filing</h3>
           <p class="text-gray-600">Seamless compliance to keep your business penalty-free and up-to-date.</p>
         </div>
         <div class="p-8 bg-white rounded-3xl shadow-2xl transform hover:-translate-y-2 transition">
-          <img src="https://placehold.co/48" alt="Tax" class="w-12 mb-4 mx-auto" />
+          <img src="tax_filing_paperwork.avif" alt="Tax" class="w-12 mb-4 mx-auto" />
           <h3 class="text-2xl font-semibold mb-2">Income‑Tax Returns</h3>
           <p class="text-gray-600">Maximize refunds and minimize liabilities with expert planning.</p>
         </div>
         <div class="p-8 bg-white rounded-3xl shadow-2xl transform hover:-translate-y-2 transition">
-          <img src="https://placehold.co/48" alt="Audit" class="w-12 mb-4 mx-auto" />
+          <img src="audit_report_analysis.avif" alt="Audit" class="w-12 mb-4 mx-auto" />
           <h3 class="text-2xl font-semibold mb-2">Audit & Assurance</h3>
           <p class="text-gray-600">Comprehensive audits that ensure compliance and build trust.</p>
         </div>
@@ -184,7 +142,7 @@
   <section id="about" class="py-20 bg-background">
     <div class="max-w-6xl mx-auto px-6 space-y-20">
       <div class="flex flex-col lg:flex-row items-center lg:space-x-12">
-        <img src="https://placehold.co/256" alt="CA Ritu Sharma" class="w-64 h-64 rounded-full shadow-lg mb-6 lg:mb-0" />
+        <img src="professional_female_accountant_portrait.avif" alt="CA Ritu Sharma" class="w-64 h-64 rounded-full shadow-lg mb-6 lg:mb-0" />
         <div>
           <h2 class="text-4xl font-bold text-primary mb-4">Meet CA Ritu Sharma</h2>
           <p class="text-gray-600 mb-4">
@@ -204,17 +162,17 @@
         <h3 class="text-3xl font-semibold text-primary text-center mb-8">Our Expert Team</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="bg-white rounded-3xl shadow-xl p-6">
-            <img src="https://placehold.co/150" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4" />
+            <img src="businessman_portrait.avif" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4" />
             <h4 class="text-xl font-bold text-primary text-center">Rahul Verma</h4>
             <p class="text-center text-gray-600">Senior Auditor</p>
           </div>
           <div class="bg-white rounded-3xl shadow-xl p-6">
-            <img src="https://placehold.co/150" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4" />
+            <img src="businesswoman_portrait.avif" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4" />
             <h4 class="text-xl font-bold text-primary text-center">Sneha Kapoor</h4>
             <p class="text-center text-gray-600">Tax Consultant</p>
           </div>
           <div class="bg-white rounded-3xl shadow-xl p-6">
-            <img src="https://placehold.co/150" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4" />
+            <img src="diverse_team_meeting.avif" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4" />
             <h4 class="text-xl font-bold text-primary text-center">Vikram Singh</h4>
             <p class="text-center text-gray-600">Compliance Advisor</p>
           </div>
@@ -229,7 +187,7 @@
       <h2 class="text-4xl font-bold text-center text-primary mb-12">Latest Insights</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-          <img src="https://placehold.co/400x250" alt="Blog Post" class="w-full" />
+          <img src="gst_update_documents.avif" alt="Blog Post" class="w-full" />
           <div class="p-6">
             <h3 class="text-2xl font-semibold mb-2">Understanding GST Updates</h3>
             <p class="text-gray-600 mb-4">Stay updated with the latest GST amendments and what they mean for your business.</p>
@@ -237,7 +195,7 @@
           </div>
         </div>
         <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-          <img src="https://placehold.co/400x250" alt="Blog Post" class="w-full" />
+          <img src="tax_planning_strategy.avif" alt="Blog Post" class="w-full" />
           <div class="p-6">
             <h3 class="text-2xl font-semibold mb-2">Tax Planning Strategies</h3>
             <p class="text-gray-600 mb-4">Expert tips on how to maximize your deductions and streamline your financial process.</p>
@@ -245,7 +203,7 @@
           </div>
         </div>
         <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
-          <img src="https://placehold.co/400x250" alt="Blog Post" class="w-full" />
+          <img src="business_audit_best_practices.avif" alt="Blog Post" class="w-full" />
           <div class="p-6">
             <h3 class="text-2xl font-semibold mb-2">Audit Best Practices</h3>
             <p class="text-gray-600 mb-4">Learn how a proper audit can improve your business transparency and trustworthiness.</p>
@@ -258,7 +216,7 @@
 
   <!-- Contact with Pattern BG -->
   <section id="contact" class="py-20 relative">
-    <div class="absolute inset-0 opacity-10 bg-[url('https://placehold.co/200x200')] bg-repeat"></div>
+    <div class="absolute inset-0 opacity-10"></div>
     <div class="relative max-w-2xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center text-primary mb-8">Get in Touch</h2>
       <form id="contactForm" action="https://formsubmit.co/your-email@example.com" method="POST" class="space-y-6 bg-white p-10 rounded-3xl shadow-2xl">
@@ -290,7 +248,7 @@
       <p class="text-sm">&copy; Sharma & Co. 20XX. All rights reserved.</p>
     </div>
     <div class="max-w-7xl mx-auto px-6 mt-6 border-t border-gray-700 pt-4 text-center">
-      <p class="text-xs">Designed & Developed by Md Rahib Hasan.</p>
+      <p class="text-xs">Designed & Developed by Sharma & Co. – Crafting professional digital experiences for over a decade.</p>
     </div>
   </footer>
 
