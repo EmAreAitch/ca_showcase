@@ -1,0 +1,26 @@
+---
+title: "Articles"
+---
+
+<section class="max-w-7xl mx-auto px-6 py-32">
+  <h1 class="text-3xl font-heading text-primary mb-8"><%= current_page.data.title %></h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <% blog.articles.each do |article| %>
+      <article class="bg-white rounded-2xl shadow-lg p-6">
+        <h2 class="text-2xl font-heading text-primary mb-2">
+          <a href="<%= article.url %>"><%= article.title %></a>
+        </h2>
+        <time class="text-sm text-secondary" datetime="<%= article.date %>"><%= article.date.strftime("%B %d, %Y") %></time>
+        <p class="mt-4 text-base"><%= article.summary %></p>        
+        <a class="mt-4 inline-block text-accent hover:underline font-semibold" href="<%= article.url %>">Read more →</a>
+      </article>
+    <% end %>
+  </div>
+
+  <% if blog.respond_to?(:paginate) %>
+    <nav class="mt-12 flex justify-center">
+      <%= paginate @articles, theme: 'tailwind' %>
+    </nav>
+  <% end %>
+</section>

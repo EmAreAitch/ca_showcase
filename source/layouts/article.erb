@@ -1,0 +1,22 @@
+<% wrap_layout :layout do %>
+    <!-- Main Content -->
+    <main class="pt-24">
+      <article class="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-lg my-8">
+        <header class="mb-8">
+          <h1 class="text-4xl font-heading text-primary mb-2"><%= current_article.title %></h1>
+          <time class="text-sm text-secondary" datetime="<%= current_article.date %>"><%= current_article.date.strftime("%B %d, %Y") %></time>
+          <% if current_article.tags.any? %>
+            <div class="mt-4">
+              <% current_article.tags.each do |tag| %>
+                <a href="<%= tag_path tag%>" class="inline-block text-accent hover:underline mr-2">#<%= tag %></a>
+              <% end %>
+            </div>
+          <% end %>
+        </header>
+
+        <div class="prose">
+          <%= yield %>
+        </div>
+      </article>
+    </main>
+<% end %>
