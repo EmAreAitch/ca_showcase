@@ -1,15 +1,13 @@
 <!doctype html>
 <html class="h-dvh">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Sharma & Co.: Expert GST, Tax Filing & Audit services in Delhi. Book a free 15 min call today."/>    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <%= favicon_tag "logo.avif" %>
-    <%= javascript_include_tag "menu", defer: true %>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sharma & Co.: Expert GST, Tax Filing & Audit services in Delhi. Book a free 15 min call today."/>    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <%= favicon_tag "logo.avif" %>
+    <%= javascript_include_tag "menu", defer: true %>    
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= "#{current_page.data.title&. + " | "}Sharma & Co. – Chartered Accountants, Delhi" %></title>
     <%= stylesheet_link_tag "site" %>
@@ -34,8 +32,9 @@
         <a href="/articles" class="text-gray-700 hover:text-accent font-bold">Articles</a>
         <a href="/#contact" class="text-gray-700 hover:text-accent font-bold">Contact</a>
       </div>
-      <div class="hidden lg:flex">
+      <div class="hidden lg:flex gap-2">
         <a href="https://wa.me/911112345678" class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-yellow-500">WhatsApp Us</a>
+        <a href="/admin/" class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-yellow-500">Admin</a>
       </div>
       <button id="mobile-menu-toggle" class="lg:hidden">
         <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

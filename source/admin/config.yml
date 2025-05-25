@@ -1,6 +1,3 @@
-# backend:
-#   name: git-gateway
-#   branch: main # Branch to update (optional; defaults to master)
 local_backend: true
 
 backend:
@@ -19,8 +16,12 @@ collections:
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{title}}'
     fields:
-      - { label: Title,       name: title,       widget: string }
-      - { label: Date,        name: date,        widget: datetime }
-      - { label: Tags,        name: tags,        widget: list,        default: [] }
-      - { label: Description, name: description, widget: text }
-      - { label: Body,        name: body,        widget: markdown }
+      - { label: Title,       name: title,       widget: string,   default: "Untitled" }
+      - { label: Date,        name: date,        widget: datetime, format: "YYYY-MM-DD HH:mm Z", default: "{{now}}" }
+      - { label: "Cover Image", name: "cover_image", widget: "image", required: false }
+      - { label: Tags,        name: tags,        widget: list,     default: ["tag1","tag2", "tag3"] }
+      - { label: Description, name: description, widget: text,     default: "Enter a description here" }
+      - { label: Body,        name: body,        widget: markdown, default: "Write your post content here" }
+      
+editor:
+  preview: false

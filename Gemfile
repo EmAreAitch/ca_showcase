@@ -20,3 +20,5 @@ gem "middleman", "~> 4.6"
 gem "middleman-blog", "~> 4.1"
 
 gem "nokogiri", "~> 1.18"
+
+gem "kramdown-parser-gfm", "~> 1.1"

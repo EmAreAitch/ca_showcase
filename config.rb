@@ -79,7 +79,7 @@ configure :development do
     end
   end
   use Rack::DowncaseHeaders
-  activate :livereload
+  activate :livereload, ignore: ["/admin/"]
 end
 
 
@@ -120,3 +120,6 @@ activate :blog do |blog|
 end
 
 activate :directory_indexes
+set :markdown,
+    input:  "GFM",        # use GitHub‑Flavored Markdown parser
+    hard_wrap: false       # treat single newlines as <br/>

@@ -12,8 +12,13 @@
               <% end %>
             </div>
           <% end %>
-        </header>
-
+        </header>      
+        <div class="mb-6">
+          <img 
+            src="<%= current_article.data['cover_image'] || '/images/default_article_cover.png' %>" 
+            alt="Cover image for <%= current_article.title %>" 
+            class="w-full h-auto rounded-lg shadow-md" />
+        </div>
         <div class="prose">
           <%= yield %>
         </div>

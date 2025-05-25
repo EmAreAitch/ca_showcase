@@ -7,13 +7,30 @@ title: "Articles"
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     <% blog.articles.each do |article| %>
-      <article class="bg-white rounded-2xl shadow-lg p-6">
-        <h2 class="text-2xl font-heading text-primary mb-2">
-          <a href="<%= article.url %>"><%= article.title %></a>
-        </h2>
-        <time class="text-sm text-secondary" datetime="<%= article.date %>"><%= article.date.strftime("%B %d, %Y") %></time>
-        <p class="mt-4 text-base"><%= article.summary %></p>        
-        <a class="mt-4 inline-block text-accent hover:underline font-semibold" href="<%= article.url %>">Read more →</a>
+      <article class="bg-white rounded-2xl shadow-lg overflow-hidden">         
+          <a href="<%= article.url %>" class="block">
+            <img
+              src="<%= article.data['cover_image'] || '/images/default_article_cover.png' %>" 
+              alt="<%= article.title %> cover image"
+              class="w-full h-52"
+            />
+          </a>        
+
+        <div class="p-6"> 
+          <h2 class="text-2xl font-heading text-primary mb-2">
+            <a href="<%= article.url %>"><%= article.title %></a>
+          </h2>
+          <time class="text-sm text-secondary" datetime="<%= article.date %>">
+            <%= article.date.strftime("%B %d, %Y") %>
+          </time>
+          <p class="mt-4 text-base"><%= article.summary(100) %></p>
+          <a
+            class="mt-4 inline-block text-accent hover:underline font-semibold"
+            href="<%= article.url %>"
+          >
+            Read more →
+          </a>
+        </div>
       </article>
     <% end %>
   </div>
