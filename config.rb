@@ -93,7 +93,7 @@ configure :build do
   # Append a hash to asset urls (make sure to use the url helpers)
   activate :asset_hash do |opts|
     opts.exts = config[:asset_extensions] + %w(.avif) - %w(.ico)
-    opts.ignore += [%r{^images/uploads/}]
+    # opts.ignore += [%r{^images/uploads/}]
   end
 end
 
@@ -124,3 +124,5 @@ activate :directory_indexes
 set :markdown,
     input:  "GFM",        # use GitHub‑Flavored Markdown parser
     hard_wrap: false       # treat single newlines as <br/>
+
+set :root_url, ENV['URL'] || 'http://localhost:4567'
