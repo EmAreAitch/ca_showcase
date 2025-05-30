@@ -1,0 +1,13 @@
+# netlify.toml (at repo root)
+
+[build]
+  command = "middleman build"
+  publish = "build"
+
+[dev]
+  # command to run your Middleman server in “live‐reload” mode
+  command = "middleman server"
+  # the port Middleman opens on by default
+  port    = 3000
+  # netlify-dev will proxy this into its own 8888 endpoint
+  targetPort = 4567

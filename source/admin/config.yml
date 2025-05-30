@@ -23,3 +23,8 @@ collections:
       
 editor:
   preview: false
+
+site_url: https://ca-showcase.netlify.app
+logo_url: https://ca-showcase.netlify.app/images/logo-da93d944.avif
+
+
