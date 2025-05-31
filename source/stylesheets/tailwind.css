@@ -17,7 +17,7 @@
   }
 
   --background-image-textured:
-    url('https://www.transparenttextures.com/patterns/maze-white.png');
+    url('/images/maze-white.avif');
 
   --background-image-hero:
     url('/images/layered_waves_haikei.avif');
