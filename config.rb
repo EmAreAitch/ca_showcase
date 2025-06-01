@@ -84,13 +84,9 @@ configure :development do
   set :show_exceptions, true
 end
 
-
-configure :build do
-  # Append a hash to asset urls (make sure to use the url helpers)
-  activate :asset_hash do |opts|
-    opts.exts = config[:asset_extensions] + %w(.avif) - %w(.ico)
-    # opts.ignore += [%r{^images/uploads/}]
-  end
+# Append a hash to asset urls (make sure to use the url helpers)
+activate :asset_hash do |opts|
+  opts.exts = config[:asset_extensions] + %w(.avif) - %w(.ico)
 end
 
 # ignore 'stylesheets/tailwind.css'

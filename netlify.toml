@@ -3,6 +3,7 @@
 [build]
   command = "middleman build"
   publish = "build"
+  environment = {NODE_ENV = "production"}
 
 [dev]
   # command to run your Middleman server in “live‐reload” mode
