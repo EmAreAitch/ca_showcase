@@ -32,11 +32,9 @@
 
     <title>
       <%= "#{current_page.data.title&. + " | "}Sharma & Co. – Chartered Accountants, Delhi" %>
-    </title>
-
+    </title>    
     <%= stylesheet_link_tag "site" %>
-    <%= stylesheet_link_tag "tailwind" %>
-
+    <%= stylesheet_link_tag "tailwind" %>    
     <% if content_for?(:head) %>
       <%= yield_content :head %>
     <% end %>

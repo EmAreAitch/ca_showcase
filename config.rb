@@ -14,14 +14,10 @@ after_configuration do
   end
 end
 
-# config.rb
 activate :external_pipeline,
   name: :css,
-  command: build? ?
-    "npx postcss source/stylesheets/tailwind.css -o build/stylesheets/tailwind.css" :
-    "npx postcss source/stylesheets/tailwind.css -o .tmp/stylesheets/tailwind.css --watch",
-  source: (build? ? "build" : ".tmp")
-
+  command: "npx postcss source/stylesheets/tailwind.css -o .tmp/stylesheets/tailwind.css#{" --watch" unless build?}",
+  source: ".tmp"
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/
