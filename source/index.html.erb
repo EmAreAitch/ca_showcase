@@ -135,31 +135,34 @@
   <section id="insights" class="py-20">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center text-primary mb-12">Latest Insights</h2>
-      <div class="flex flex-wrap justify-center gap-12">
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden w-72">
-          <img src="images/gst_update_documents.avif" alt="Blog Post" class="w-full" />
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold mb-2">Understanding GST Updates</h3>
-            <p class="text-gray-600 mb-4">Stay updated with the latest GST amendments and what they mean for your business.</p>
-            <a href="#" class="text-accent font-semibold hover:underline">Read More</a>
-          </div>
-        </div>
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden w-72">
-          <img src="images/tax_planning_strategy.avif" alt="Blog Post" class="w-full" />
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold mb-2">Tax Planning Strategies</h3>
-            <p class="text-gray-600 mb-4">Expert tips on how to maximize your deductions and streamline your financial process.</p>
-            <a href="#" class="text-accent font-semibold hover:underline">Read More</a>
-          </div>
-        </div>
-        <div class="bg-white rounded-3xl shadow-xl overflow-hidden w-72">
-          <img src="images/business_audit_best_practices.avif" alt="Blog Post" class="w-full" />
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold mb-2">Audit Best Practices</h3>
-            <p class="text-gray-600 mb-4">Learn how a proper audit can improve your business transparency and trustworthiness.</p>
-            <a href="#" class="text-accent font-semibold hover:underline">Read More</a>
-          </div>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <% blog.articles.first(3).each do |article| %>
+          <article class="bg-white rounded-2xl shadow-lg overflow-hidden">         
+              <a href="<%= article.url %>" class="block">
+                <img
+                  src="<%= article.data['cover_image'] ? "/.netlify/images?url=#{image_path article.data['cover_image']}&fm=avif" : '/images/default_article_cover.avif' %>" 
+                  alt="<%= article.title %> cover image"
+                  class="w-full h-52"
+                />
+              </a>        
+
+            <div class="p-6"> 
+              <h2 class="text-2xl font-heading text-primary mb-2">
+                <a href="<%= article.url %>"><%= article.title %></a>
+              </h2>
+              <time class="text-sm text-secondary" datetime="<%= article.date %>">
+                <%= article.date.strftime("%B %d, %Y") %>
+              </time>
+              <p class="mt-4 text-base"><%= article.summary(100) %></p>
+              <a
+                class="mt-4 inline-block text-accent hover:underline font-semibold"
+                href="<%= article.url %>"
+              >
+                Read more →
+              </a>
+            </div>
+          </article>
+        <% end %>
       </div>
     </div>
   </section>
