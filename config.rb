@@ -85,8 +85,10 @@ configure :development do
 end
 
 # Append a hash to asset urls (make sure to use the url helpers)
-activate :asset_hash do |opts|
-  opts.exts = config[:asset_extensions] + %w(.avif) - %w(.ico)
+configure :build do
+  activate :asset_hash do |opts|
+    opts.exts = config[:asset_extensions] + %w(.avif) - %w(.ico)
+  end
 end
 
 # ignore 'stylesheets/tailwind.css'

@@ -88,3 +88,8 @@
   for = "/**/*.xml"
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[redirects]]
+  from   = "/articles/tags/*"
+  to     = "/articles/tags/404/"
+  status = 404  
