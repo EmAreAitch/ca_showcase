@@ -132,6 +132,8 @@ GEM
     reline (0.6.1)
       io-console (~> 0.5)
     rexml (3.4.1)
+    ruby-prof (1.7.2)
+      base64
     sassc (2.4.0)
       ffi (~> 1.9)
     securerandom (0.4.1)
@@ -164,6 +166,7 @@ DEPENDENCIES
   middleman-livereload (~> 3.4)
   nokogiri (~> 1.18)
   ostruct (~> 0.6.1)
+  ruby-prof (~> 1.7)
   tailwindcss-ruby (~> 4.1)
   terser (~> 1.1)
   tzinfo-data
