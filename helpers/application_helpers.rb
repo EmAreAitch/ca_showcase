@@ -7,7 +7,7 @@ module ApplicationHelpers
     # use image_path helper if available
     image = image_path(cover_image.present? ? cover_image : default_image)
 
-    query_params = default_params.merge(fm:, fit:, w:, h:, position:, q:, url: image).compact
+    query_params = {fm:, fit:, w:, h:, position:, q:, url: image}.compact
 
 
     "/.netlify/images?#{query_params.to_query}"
