@@ -45,8 +45,7 @@
 
     <title>
       <%= "#{(current_page.data.title or yield_content :title)&. + " | "}Sharma & Co. – Chartered Accountants, Delhi" %>
-    </title>    
-    <%= stylesheet_link_tag "site" %>
+    </title>        
     <%= stylesheet_link_tag "tailwind" %>    
     <%= yield_content :head %>    
   </head>
