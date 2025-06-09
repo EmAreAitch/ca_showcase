@@ -35,13 +35,7 @@
     />
 
     <%= favicon_tag "logo.avif" %>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const btn = document.getElementById('mobile-menu-toggle');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-      })
-    </script>
+    <%= javascript_include_tag "menu", defer: true %>
 
     <title>
       <%= "#{(current_page.data.title or yield_content :title)&. + " | "}Sharma & Co. – Chartered Accountants, Delhi" %>
