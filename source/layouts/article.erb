@@ -15,7 +15,7 @@
         </header>      
         <div class="mb-6">
           <img 
-            src="<%= current_article.data['cover_image'] ? "/.netlify/images?url=#{image_path current_article.data['cover_image']}&fm=avif&h=208" : '/images/default_article_cover.avif' %>" 
+            src="<%= "/.netlify/images?url=#{current_article.data['cover_image'] ? image_path current_article.data['cover_image'] : '/images/default_article_cover.avif'}&fm=avif&h=480" %>" 
             alt="Cover image for <%= current_article.title %>" 
             class="w-full h-auto rounded-lg shadow-md" />
         </div>
