@@ -10,7 +10,7 @@
       <article class="bg-white rounded-2xl shadow-lg overflow-hidden">         
           <a href="<%= article.url %>" class="block">
             <img
-              src="<%= "/.netlify/images?url=#{article.data['cover_image'] ? image_path(article.data['cover_image']) : '/images/default_article_cover.avif'}&fm=avif&h=208" %>" 
+              src="<%= netlify_image_url(article, h: 208) %>" 
               alt="<%= article.title %> cover image"
               class="w-full h-52"
             />
