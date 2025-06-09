@@ -89,7 +89,7 @@
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
 
-[[redirects]]
-  from   = "*"
-  to     = "/404"
-  status = 404  
+# [[redirects]]
+#   from   = "*"
+#   to     = "/404"
+#   status = 404  
