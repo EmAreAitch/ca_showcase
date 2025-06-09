@@ -1,6 +1,6 @@
 ---
 title: "Section 44ADA Explained: Presumptive Taxation for Professionals"
-date: 2025-05-02 20:23 +0530
+date: 2025-05-02 20:23 +05:30
 cover_image: /images/uploads/chatgpt-image-may-12-2025-09_50_57-am.png
 tags:
   - income-tax

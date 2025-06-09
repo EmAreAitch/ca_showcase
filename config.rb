@@ -87,7 +87,7 @@ end
 # Append a hash to asset urls (make sure to use the url helpers)
 configure :build do
   activate :asset_hash do |opts|
-    opts.exts = config[:asset_extensions] + %w(.avif) - %w(.ico)
+    opts.exts = config[:asset_extensions] + %w(.avif .json) - %w(.ico)
   end
 end
 
@@ -95,23 +95,10 @@ end
 Time.zone = 'Asia/Kolkata'
 
 activate :blog do |blog|
-  # Store source files under source/articles
-  blog.sources = "articles/{year}-{month}-{day}-{title}.html"
-  # URLs will be /articles/YYYY/MM/DD/title.html
-  blog.permalink = "articles/{year}/{month}/{day}/{title}.html"
-  # Use markdown files by default
-  blog.default_extension = ".markdown"
-  # Optional: customize layouts
   blog.tag_template = "tag.html"
   blog.layout = "article"        # uses source/layouts/article.erb
-  blog.taglink = "articles/tags/{tag}.html"
-  blog.year_link = "articles/{year}.html"
-  blog.month_link = "articles/{year}/{month}.html"
-  blog.day_link = "articles/{year}/{month}/{day}.html"
-  # Enable pagination if desired
-  # blog.paginate = true
-  # blog.per_page = 10
-  # blog.page_link = "page/{num}"
+  blog.prefix = "articles"
+  blog.sources = '{original_year}-{original_month}-{original_day}-{original_title}.html'
 end
 
 activate :directory_indexes
@@ -120,3 +107,14 @@ set :markdown,
     hard_wrap: false       # treat single newlines as <br/>
 
 set :root_url, ENV['URL'] || 'http://localhost:4567'
+
+tags = resources
+        .select {it.data.tags}
+        .map {it.data.tags}
+        .map { it.is_a?(String) ? it.split(',').map(&:strip) : it }
+        .flatten
+        .sort_by(&:downcase)
+        .uniq
+
+collection :sorted_tags, tags
+

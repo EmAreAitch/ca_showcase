@@ -1,10 +1,10 @@
 ---
-
-title: "My First Blog Post"
-date: 2025-05-02 20:23 +0530
-tags: [announcement, testing]
-description: "Launching the new blog on our Middleman site."
-
+title: My First Blog Post
+date: 2025-05-02 12:40 +05:30
+tags:
+  - announcement
+  - testing
+description: Launching the new blog on our Middleman site.
 ---
 
 # Welcome to My Blog

@@ -90,6 +90,6 @@
     Cache-Control = "public, max-age=3600, must-revalidate"
 
 [[redirects]]
-  from   = "/articles/tags/*"
-  to     = "/articles/tags/404/"
+  from   = "*"
+  to     = "/404"
   status = 404  
