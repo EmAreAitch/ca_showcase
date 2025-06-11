@@ -3,7 +3,7 @@ module ApplicationHelpers
     # fallback image path
     default_image = '/images/default_article_cover.avif'
     cover_image = article.data['cover_image']
-
+    return default_image if cover_image.blank? and development?
     # use image_path helper if available
     image = image_path(cover_image.present? ? cover_image : default_image)
 

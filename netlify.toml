@@ -3,7 +3,7 @@
 [build]
   command = "middleman build"
   publish = "build"
-  environment = {NODE_ENV = "production"}
+  environment = {NODE_ENV = "production", NETLIFY_IMAGE_CDN = "true"}
 
 [dev]
   # command to run your Middleman server in “live‐reload” mode
@@ -89,7 +89,7 @@
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
 
-# [[redirects]]
-#   from   = "*"
-#   to     = "/404"
-#   status = 404  
+[[redirects]]
+  from   = "*"
+  to     = "/404"
+  status = 404  

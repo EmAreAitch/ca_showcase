@@ -1,5 +1,5 @@
 ---
-title: My First Blog Post
+title: "My First Blog Post"
 date: 2025-05-02 12:40 +05:30
 tags:
   - announcement
