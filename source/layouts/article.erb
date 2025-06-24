@@ -1,27 +1,92 @@
 <% wrap_layout :layout do %>
-    <!-- Main Content -->
-    <main class="pt-24">
-      <article class="max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-lg my-8">
-        <header class="mb-8">
-          <h1 class="text-4xl font-heading text-primary mb-2"><%= current_article.title %></h1>
-          <time class="text-sm text-secondary" datetime="<%= current_article.date %>"><%= current_article.date.strftime("%B %d, %Y") %></time>
-          <% if current_article.tags.any? %>
-            <div class="mt-4">
-              <% current_article.tags.each do |tag| %>
-                <a href="<%= tag_path tag%>" class="inline-block text-accent hover:underline mr-2">#<%= tag %></a>
-              <% end %>
-            </div>
-          <% end %>
-        </header>      
-        <div class="mb-6">
-          <img 
-            src="<%= netlify_image_url(current_article, h: 480) %>" 
-            alt="Cover image for <%= current_article.title %>" 
-            class="w-full h-auto rounded-lg shadow-md" />
-        </div>
-        <div class="prose">
-          <%= yield %>
+<div class="flex flex-col md:flex-row pt-24 max-w-6xl mx-auto">
+  <!-- Main Article Section -->
+  <main class="w-full md:w-2/3 p-6 bg-white rounded-2xl shadow-lg my-8">
+    <header class="mb-8">
+      <h1 class="text-4xl font-heading text-primary mb-2">
+        <%= current_article.title %>
+      </h1>
+      <time
+        class="text-sm text-secondary"
+        datetime="<%= current_article.date %>"
+      >
+        <%= current_article.date.strftime("%B %d, %Y") %>
+      </time>
+      <% if current_article.tags.any? %>
+      <div class="mt-4">
+        <% current_article.tags.each do |tag| %>
+        <a
+          href="<%= tag_path tag %>"
+          class="inline-block text-accent hover:underline mr-2"
+          >#<%= tag %></a
+        >
+        <% end %>
+      </div>
+      <% end %>
+    </header>
+
+    <div class="mb-6 w-full">
+      <img
+        src="<%= netlify_image_url(current_article, h: 480) %>"
+        alt="Cover image for <%= current_article.title %>"
+        class="h-[480px] rounded-lg shadow-md mx-auto"
+      />
+    </div>
+
+    <div class="prose"><%= yield %></div>
+  </main>
+
+  <!-- Sidebar / Recent Articles (Card Layout) -->
+  <aside class="w-full md:w-1/3 p-6 my-8 md:ml-8">
+    <h2 class="text-2xl font-heading text-primary mb-6">More Articles</h2>
+    <div class="grid grid-cols-1 gap-6">
+      <% blog.articles.reject {it.url == current_article.url}.sample(3).each do |article| %> <% next if article.url ==
+      current_article.url %>
+      <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <a href="<%= article.url %>" class="block overflow-hidden">
+          <img
+            src="<%= netlify_image_url(article, h: 208) %>"
+            alt="<%= article.data.title %> cover image"
+            class="h-[208px] mx-auto"
+          />
+        </a>
+        <div class="p-4">
+          <h3 class="text-xl font-heading text-primary mb-1">
+            <a href="<%= article.url %>" class="hover:underline"
+              ><%= article.data.title %></a
+            >
+          </h3>
+          <time class="text-sm text-secondary" datetime="<%= article.date %>">
+            <%= article.date.strftime("%b %d, %Y") %>
+          </time>
+          <p class="mt-4 text-base"><%= article.data.description %></p>
+          <a
+            class="mt-4 inline-block text-accent hover:underline font-semibold"
+            href="<%= article.url %>"
+          >
+            Read more →
+          </a>
         </div>
       </article>
-    </main>
+      <% end %>
+    </div>
+  </aside>
+</div>
+<section id="contact" class="py-20 bg-background">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-primary mb-4">Need More Guidance?</h2>
+    <p class="text-sm mb-8">
+      Our CA experts are standing by to answer your questions and help you
+      implement these strategies. Book your free, no‑strings‑attached
+      consultation now.
+    </p>
+    <a
+      href="/#contact"
+      class="inline-block px-8 py-4 bg-accent text-white font-semibold rounded-full hover:bg-opacity-90 transition text-sm"
+    >
+      Get Expert Advice
+    </a>
+  </div>
+</section>
+
 <% end %>

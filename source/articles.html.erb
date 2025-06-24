@@ -1,46 +1,76 @@
 ---
 title: "Articles"
+pageable: true
 ---
 
 <section class="max-w-6xl mx-auto px-6 py-32 space-y-4">
-  <h1 class="text-3xl font-heading text-primary mb-8"><%= current_page.data.title %></h1>
+  <h1 class="text-3xl font-heading text-primary mb-8">
+    <%= current_page.data.title %>
+  </h1>
 
   <!-- 🏷️ Tags Section -->
   <%= partial :tags_list %>
   <!-- 📄 Articles Grid -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <% blog.articles.each do |article| %>      
-      <article class="bg-white rounded-2xl shadow-lg overflow-hidden">         
-        <a href="<%= article.url %>" class="block">
-          <img
-            src="<%= netlify_image_url(article, h: 208) %>" 
-            alt="<%= article.title %> cover image"
-            class="w-full h-52"
-          />
-        </a>        
+    <% page_articles.each do |article| %>
+    <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <a href="<%= article.url %>" class="block">
+        <img
+          src="<%= netlify_image_url(article, h: 208) %>"
+          alt="<%= article.title %> cover image"
+          class="h-[208px] mx-auto w-full"
+        />
+      </a>
 
-        <div class="p-6"> 
-          <h2 class="text-2xl font-heading text-primary mb-2">
-            <a href="<%= article.url %>"><%= article.title %></a>
-          </h2>
-          <time class="text-sm text-secondary" datetime="<%= article.date %>">
-            <%= article.date.strftime("%B %d, %Y") %>
-          </time>
-          <p class="mt-4 text-base"><%= article.summary(100) %></p>
-          <a
-            class="mt-4 inline-block text-accent hover:underline font-semibold"
-            href="<%= article.url %>"
-          >
-            Read more →
-          </a>
-        </div>
-      </article>
+      <div class="p-6">
+        <h2 class="text-2xl font-heading text-primary mb-2">                    
+          <a href="<%= article.url %>"><%= article.title %></a>
+        </h2>
+        <time class="text-sm text-secondary" datetime="<%= article.date %>">
+          <%= article.date.strftime("%B %d, %Y") %>
+        </time>
+        <p class="mt-4 text-base"><%= article.data.description %></p>
+        <a
+          class="mt-4 inline-block text-accent hover:underline font-semibold"
+          href="<%= article.url %>"
+        >
+          Read more →
+        </a>
+      </div>
+    </article>
     <% end %>
   </div>
 
-  <% if blog.respond_to?(:paginate) %>
-    <nav class="mt-12 flex justify-center">
-      <%= paginate @articles, theme: 'tailwind' %>
-    </nav>
-  <% end %>
+<% if paginate %>
+  <nav class="mt-12 flex items-center justify-center gap-3">
+    <%#— Previous link —%>
+    <% if prev_page %>
+      <%= link_to '← Previous',
+                  prev_page,
+                  class: "px-4 py-2 rounded-lg bg-secondary text-background font-medium hover:bg-secondary-focus focus:outline-none focus:ring-2 focus:ring-accent transition" %>
+    <% end %>
+
+    <%#— Numbered pages —%>
+    <% (1..num_pages).each do |n| %>
+      <% url = (n == 1 ? "/articles" : "/articles/page/#{n}") %>
+      <% if n == page_number %>
+        <span class="px-4 py-2 rounded-lg bg-primary text-background font-semibold">
+          <%= n %>
+        </span>
+      <% else %>
+        <%= link_to n,
+                    url,
+                    class: "px-4 py-2 rounded-lg bg-background text-primary font-medium hover:bg-secondary hover:text-background focus:outline-none focus:ring-2 focus:ring-accent transition" %>
+      <% end %>
+    <% end %>
+
+    <%#— Next link —%>
+    <% if next_page %>
+      <%= link_to 'Next →',
+                  next_page,
+                  class: "px-4 py-2 rounded-lg bg-secondary text-background font-medium hover:bg-secondary-focus focus:outline-none focus:ring-2 focus:ring-accent transition" %>
+    <% end %>
+  </nav>
+<% end %>
+
 </section>

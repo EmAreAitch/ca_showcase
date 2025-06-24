@@ -24,3 +24,5 @@ gem "nokogiri", "~> 1.18"
 gem "kramdown-parser-gfm", "~> 1.1"
 
 gem "ruby-prof", "~> 1.7"
+
+gem "babosa", "~> 2.0"

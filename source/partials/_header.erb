@@ -1,0 +1,187 @@
+<nav class="bg-white shadow-lg fixed w-full z-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-between items-center py-4">
+      <a href="/" class="flex items-center text-primary font-heading text-2xl">
+        <img
+          src="/images/logo.avif"
+          alt="Logo"
+          class="h-10 w-10 mr-2 rounded-full"
+        />
+        Sharma & Co.
+      </a>
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center space-x-6">
+        <!-- Services dropdown wrapper -->
+        <div class="relative group">
+          <!-- Trigger -->
+          <a
+            href="#services"
+            class="inline-flex items-center text-gray-700 hover:text-accent font-bold"
+          >
+            Services
+            <svg
+              class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
+
+          <!-- Dropdown menu -->
+          <div
+            class="absolute left-0 top-full w-48 bg-white rounded-md shadow-lg hidden group-hover:block z-10"
+          >
+            <ul class="py-1 text-primary">
+              <li>
+                <a
+                  href="/gst-registration-filling"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                >
+                  GST Registration & Filing
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/income-tax-returns"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                >
+                  Income‑Tax Returns
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/audit-assurance"
+                  class="block px-4 py-2 hover:bg-gray-100"
+                >
+                  Audit & Assurance
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Other links -->
+        <a href="/#process" class="text-gray-700 hover:text-accent font-bold"
+          >Our Process</a
+        >
+        <a href="/#about" class="text-gray-700 hover:text-accent font-bold"
+          >About</a
+        >
+        <a href="/articles" class="text-gray-700 hover:text-accent font-bold"
+          >Articles</a
+        >
+        <a href="/#contact-details" class="text-gray-700 hover:text-accent font-bold"
+          >Contact</a
+        >
+      </div>
+
+      <div class="hidden lg:flex gap-2">
+        <a
+          href="https://wa.me/911112345678"
+          class="px-4 py-2 bg-accent text-white rounded-lg hover:bg-yellow-500"
+        >
+          WhatsApp Us
+        </a>
+        <a href="/admin/" class="px-4 py-2 bg-primary text-white rounded-lg">
+          Admin
+        </a>
+      </div>
+      <button id="mobile-menu-toggle" class="lg:hidden">
+        <svg
+          class="w-6 h-6 text-primary"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden bg-white border-t border-gray-200"
+  >
+    <!-- Services with submenu -->
+    <div class="">
+      <button
+        id="mobile-services-toggle"
+        class="w-full text-left px-6 py-3 flex justify-between items-center hover:bg-gray-100"
+      >
+        Services
+        <svg
+          id="mobile-services-chevron"
+          class="w-5 h-5 transition-transform duration-200"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+      <div id="mobile-services-menu" class="hidden bg-white">
+        <ul class="py-1 text-primary">
+          <li>
+            <a
+              href="/gst-registration-filling"
+              class="block px-8 py-2 hover:bg-gray-100"
+            >
+              GST Registration & Filing
+            </a>
+          </li>
+          <li>
+            <a
+              href="/income-tax-returns"
+              class="block px-8 py-2 hover:bg-gray-100"
+            >
+              Income-Tax Returns
+            </a>
+          </li>
+          <li>
+            <a href="/audit-assurance" class="block px-8 py-2 hover:bg-gray-100">
+              Audit & Assurance
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- rest of your mobile links -->
+    <a href="/#process" class="block px-6 py-3 hover:bg-gray-100"
+      >Our Process</a
+    >
+    <a href="/#about" class="block px-6 py-3 hover:bg-gray-100">About</a>
+    <a href="/articles" class="block px-6 py-3 hover:bg-gray-100">Articles</a>
+    <a href="/#contact-details" class="block px-6 py-3 hover:bg-gray-100">Contact</a>
+
+    <a
+      href="https://wa.me/911112345678"
+      class="block m-4 px-4 py-2 text-center bg-accent text-white rounded-lg hover:bg-yellow-500"
+    >
+      WhatsApp Us
+    </a>
+    <a
+      href="/admin/"
+      class="block m-4 px-4 py-2 text-center bg-primary text-white rounded-lg"
+    >
+      Admin
+    </a>
+  </div>
+</nav>

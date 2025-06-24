@@ -1,18 +1,24 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
-# activate :autoprefixer do |prefix|
+# activate :autoprefixer do |prefix| 
 #   prefix.browsers = "last 2 versions"
 # end
 
-after_configuration do
-  ::Middleman::Renderers::ERb::Template.class_eval do
-    # override the existing method in-place
-    def precompiled_template(locals)
-      super.dup.force_encoding('utf-8')
-    end
+
+class Middleman::Renderers::ERb::Template
+  # override the existing method in-plac
+  def precompiled_template(locals)
+    super.dup.force_encoding('utf-8')
   end
 end
+module Middleman::Blog::UriTemplates
+  def self.safe_parameterize(str, sep = '-')
+    # ← your custom logic here, for example:
+    str.to_slug.normalize.to_s
+  end
+end
+
 
 activate :external_pipeline,
   name: :css,
@@ -98,7 +104,9 @@ activate :blog do |blog|
   blog.tag_template = "tag.html"
   blog.layout = "article"        # uses source/layouts/article.erb
   blog.prefix = "articles"
-  blog.sources = '{original_year}-{original_month}-{original_day}-{original_title}.html'
+  blog.sources = '{original_slug}.html'
+  blog.paginate = true
+  blog.per_page = 3
 end
 
 activate :directory_indexes
