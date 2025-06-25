@@ -1,0 +1,104 @@
+<main class="min-h-screen bg-background font-inter py-32 px-6">
+  <!-- Token Fee Section -->
+  <section
+    class="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl p-10 border border-secondary"
+  >
+    <h1 class="text-3xl font-heading text-primary mb-6">Token Fee Structure</h1>
+
+    <p class="text-secondary mb-8 text-lg">
+      Below is the token fee structure applicable for initial consultations and
+      document review. This helps streamline appointments and ensure efficient
+      time management for all clients.
+    </p>
+
+    <div class="space-y-6">
+      <div
+        class="flex justify-between items-center p-6 bg-background rounded-xl border border-secondary"
+      >
+        <span class="text-lg font-medium text-primary"
+          >Initial Consultation (30 mins)</span
+        >
+        <span class="text-xl font-bold text-accent">₹500</span>
+      </div>
+
+      <div
+        class="flex justify-between items-center p-6 bg-background rounded-xl border border-secondary"
+      >
+        <span class="text-lg font-medium text-primary"
+          >Document Review (per set)</span
+        >
+        <span class="text-xl font-bold text-accent">₹750</span>
+      </div>
+
+      <div
+        class="flex justify-between items-center p-6 bg-background rounded-xl border border-secondary"
+      >
+        <span class="text-lg font-medium text-primary"
+          >Comprehensive Tax Advisory (1 hour)</span
+        >
+        <span class="text-xl font-bold text-accent">₹1,500</span>
+      </div>
+    </div>
+
+    <p class="mt-10 text-sm text-secondary">
+      *Token fee is adjusted against final billing if engagement continues
+      beyond consultation.
+    </p>
+  </section>
+
+  <!-- UPI Payment Section -->
+  <section
+    class="max-w-4xl mx-auto mt-12 bg-white shadow-md rounded-2xl p-10 border border-secondary"
+  >
+    <h2 class="text-2xl font-heading text-primary mb-4">
+      Make a Payment via UPI
+    </h2>
+    <p class="text-secondary mb-6 text-base">
+      Use the following UPI ID or scan the QR code to make your token payment:
+    </p>
+
+    <div
+      class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 bg-background border border-dashed border-secondary rounded-xl p-6 mb-6"
+    >
+      <div class="flex-1">
+        <p class="text-lg font-semibold text-primary">
+          UPI ID: <span id="upi-id" class="text-accent">ca.name@upi</span>
+        </p>
+        <button
+          id="upi-copy-btn"
+          class="mt-4 bg-accent text-white font-medium px-5 py-2 rounded-xl hover:brightness-110 transition"
+        >
+          Copy UPI ID
+        </button>
+      </div>
+      <div class="flex justify-center">
+        <img
+          src="/images/qr_img.avif"
+          alt="Scan to Pay"
+          class="w-40 h-40 object-contain border border-secondary rounded-xl"
+        />
+      </div>
+    </div>
+
+    <p class="text-sm text-secondary">
+      After payment, please share the transaction ID via email or WhatsApp for
+      confirmation.
+    </p>
+  </section>
+
+  <!-- Inline Script -->
+  <script>
+    const upiID = document.getElementById("upi-id").innerText;
+    const upiCopyButton = document.getElementById("upi-copy-btn");
+    upiCopyButton.addEventListener("click", () => {
+      navigator.clipboard
+        .writeText(upiID)
+        .then(() => {
+          upiCopyButton.textContent = "Copied!";
+        })
+        .catch((e) => {          
+          alert("Failed to copy UPI ID.");
+        });
+    });
+  </script>
+</main>

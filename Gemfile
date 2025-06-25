@@ -12,9 +12,6 @@ gem "ostruct", "~> 0.6.1"
 
 gem "irb", "~> 1.15"
 
-
-gem "middleman-livereload", "~> 3.4"
-
 gem "middleman", "~> 4.6"
 
 gem "middleman-blog", "~> 4.1"
