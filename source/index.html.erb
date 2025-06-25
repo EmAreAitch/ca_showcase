@@ -326,23 +326,20 @@
 </section>
 
 <section id="contact" class="relative py-24 bg-gradient-to-br from-primary via-background to-secondary overflow-hidden">
-  <!-- Original Textured Background -->
-  <div class="absolute inset-0 bg-textured bg-center bg-cover opacity-10"></div>
-
   <div class="relative max-w-3xl mx-auto px-6">
     <!-- Animated Title -->
     <h2 class="text-5xl font-extrabold text-center text-white mb-6">
       Get in Touch
     </h2>
-    <p class="max-w-3xl mx-auto text-center text-lg text-secondary mb-8">
-        Let’s explore how we can help your business grow. Fill out the form below for a free consultation or quick quote — we’ll get back to you within one business day.
+    <p class="max-w-3xl mx-auto text-center text-lg text-slate-200 mb-8">
+        Let's explore how we can help your business grow. Fill out the form below for a free consultation or quick quote — we'll get back to you within one business day.
     </p>
     <!-- Underline Accent -->
     <div class="w-24 h-1 mx-auto mb-12 bg-accent rounded-full"></div>
 
-    <!-- Form with animated border only -->
-    <div class="relative p-[2px] rounded-3xl bg-gradient-to-r from-accent via-secondary to-accent bg-[length:200%_200%]">
-      <form id="contactForm" method="POST" class="space-y-8 bg-white/80 backdrop-blur-md p-12 rounded-3xl shadow-2xl relative z-10" netlify action="/thank-you">        
+    <!-- Optimized Form -->
+    <div class="relative p-[2px] rounded-3xl bg-gradient-to-r from-accent via-secondary to-accent">
+      <form id="contactForm" method="POST" class="space-y-8 bg-white/95 p-12 rounded-3xl shadow-lg relative z-10" netlify action="/thank-you">        
         <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
           <!-- Name Field -->
           <div class="relative">
@@ -352,13 +349,13 @@
               name="name"
               placeholder="Full Name"
               required
-              class="w-full pl-12 pr-4 py-3 border-2 border-secondary rounded-lg focus:border-accent outline-none transition"
+              class="w-full pl-12 pr-4 py-3 border-2 border-secondary/30 rounded-lg focus:border-accent outline-none transition-colors duration-200"
             />
-            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary pointer-events-none">
-              <!-- Heroicon: User -->
+            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary/60 pointer-events-none">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
               </svg>
+              
             </span>
           </div>
 
@@ -370,13 +367,14 @@
               name="email"
               placeholder="Email"
               required
-              class="w-full pl-12 pr-4 py-3 border-2 border-secondary rounded-lg focus:border-accent outline-none transition"
+              class="w-full pl-12 pr-4 py-3 border-2 border-secondary/30 rounded-lg focus:border-accent outline-none transition-colors duration-200"
             />
-            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary pointer-events-none">
-              <!-- Heroicon: Mail -->
+            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary/60 pointer-events-none">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
               </svg>
+              
+              
             </span>
           </div>
 
@@ -388,13 +386,13 @@
               name="phone"
               placeholder="Phone Number"
               required
-              class="w-full pl-12 pr-4 py-3 border-2 border-secondary rounded-lg focus:border-accent outline-none transition"
+              class="w-full pl-12 pr-4 py-3 border-2 border-secondary/30 rounded-lg focus:border-accent outline-none transition-colors duration-200"
             />
-            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary pointer-events-none">
-              <!-- Heroicon: Phone -->
+            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-secondary/60 pointer-events-none">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
               </svg>
+              
             </span>
           </div>
         </div>
@@ -405,15 +403,14 @@
             id="service"
             name="service"
             required
-            class="w-full pl-4 pr-10 py-3 border-2 border-secondary rounded-lg focus:border-accent outline-none appearance-none transition"
+            class="w-full pl-4 pr-10 py-3 border-2 border-secondary/30 rounded-lg focus:border-accent outline-none appearance-none transition-colors duration-200"
           >
-            <option value=\"\" disabled selected>Select Service</option>
+            <option value="" disabled selected>Select Service</option>
             <option>GST Filing</option>
             <option>Tax Return</option>
             <option>Audit</option>
           </select>
-          <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-secondary pointer-events-none">
-            <!-- Heroicon: Chevron Down -->
+          <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-secondary/60 pointer-events-none">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.293l3.71-4.06a.75.75 0 111.08 1.04l-4.25 4.65a.75.75 0 01-1.08 0l-4.25-4.65a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
             </svg>
@@ -428,14 +425,14 @@
             placeholder="How can we help you?"
             rows="2"
             required          
-            class="w-full pl-4 pr-4 py-3 border-2 border-secondary rounded-lg focus:border-accent outline-none transition"
+            class="w-full pl-4 pr-4 py-3 border-2 border-secondary/30 rounded-lg focus:border-accent outline-none transition-colors duration-200"
           ></textarea>
         </div>
 
         <!-- Submit -->
         <button
           type="submit"
-          class="w-full py-4 bg-accent text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transform transition active:scale-95"
+          class="w-full py-4 bg-accent text-white font-bold text-lg rounded-full shadow-lg hover:shadow-xl transform transition-all duration-200 active:scale-[0.98] hover:bg-accent/90"
         >
           Submit
         </button>
