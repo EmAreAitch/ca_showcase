@@ -1,24 +1,36 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@theme {  
-  --font-inter: 'Inter', sans-serif;
-  --font-heading: 'Poppins', sans-serif;
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-heading: "Poppins", sans-serif;
 
-  --color-primary:   #0B2545;  /* Deep navy */
-  --color-accent:    #F49D1A;  /* Bright saffron */
-  --color-secondary: #2C3E50;  /* Muted blue */
-  --color-background:#F1F5F9;  /* Light gray */
+  --color-primary: #0b2545; /* Deep navy */
+  --color-accent: #f49d1a; /* Bright saffron */
+  --color-secondary: #2c3e50; /* Muted blue */
+  --color-background: #f1f5f9; /* Light gray */
 
   --animate-float: float 3s ease-in-out infinite;
-  
+
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
-  --background-image-textured:
-    url('/images/maze-white.avif');
+  @keyframes bgpan {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 200% 0%;
+    }
+  }
 
-  --background-image-hero:
-    url('/images/layered_waves_haikei.avif');
+  --background-image-textured: url("/images/maze-white.avif");
+
+  --background-image-hero: url("/images/layered_waves_haikei.avif");
 }
